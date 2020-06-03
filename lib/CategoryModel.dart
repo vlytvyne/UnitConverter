@@ -11,7 +11,7 @@ class CategoryModel {
 }
 
 final categories = [
-	CategoryModel('Length', Icons.network_cell, Colors.redAccent, { 'km': 1, 'meter': 1000, 'cm': 100000,}),
-	CategoryModel('Weight', Icons.cloud, Colors.pinkAccent, {'kilogram': 1, 'gram': 1000, 'milligram': 100000}),
-	CategoryModel('Time', Icons.watch_later, Colors.blueAccent, {'hour': 1, 'minute': 60, 'second': 3600})
+	CategoryModel('Length', Icons.network_cell, Colors.red, { 'km': 1, 'meter': 1000, 'cm': 100000,}),
+	CategoryModel('Weight', Icons.cloud, Colors.pink, {'kilogram': 1, 'gram': 1000, 'milligram': 100000}),
+	CategoryModel('Time', Icons.watch_later, Colors.blue, {'hour': 1, 'minute': 60, 'second': 3600})
 ];

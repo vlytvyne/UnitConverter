@@ -11,10 +11,11 @@ class Category extends StatelessWidget {
   final VoidCallback onClick;
 
   const Category(
+			this.category,
       {Key key,
-      @required this.category,
-      @required this.onClick})
-      : assert(category != null);
+      this.onClick})
+      : assert(category != null),
+			  super(key: key);
 
   @override
   build(BuildContext context) {
