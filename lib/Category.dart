@@ -40,7 +40,7 @@ class Category extends StatelessWidget {
   	final iconWidget =
 	  Padding(
 		  padding: EdgeInsets.all(16),
-		  child: Icon(category.icon, size: _iconSize,),
+		  child: Image.asset(category.iconLocation),
 	  );
   	final textWidget = Text(category.name, style: Theme.of(context).textTheme.headline,);
     return Row(children: [iconWidget, textWidget],);

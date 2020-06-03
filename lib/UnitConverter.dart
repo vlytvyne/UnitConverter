@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_03_category_route/CategoryModel.dart';
+import 'Extensions.dart';
 
 class UnitConverter extends StatefulWidget {
 	
@@ -106,16 +107,31 @@ class _UnitConverterState extends State<UnitConverter> {
 			iconSize: 36,
 			onPressed: () => setState(() => reverseSectionsOrder = !reverseSectionsOrder)
 		);
+		return assembleBody(firstSection, secondSection, reverseButton);
+	}
+
+	Widget assembleBody(firstSection, secondSection, reverseButton) {
+		final column = Column(
+			children: <Widget>[
+				!reverseSectionsOrder ? firstSection : secondSection,
+				reverseButton,
+				!reverseSectionsOrder ? secondSection : firstSection,
+			],
+		);
+		final orientedColumn = MediaQuery.of(context).orientation.isPortrait ?
+		column :
+		Center(
+			child: Container(
+				child: column,
+				width: 450,
+			),
+		);
 
 		return Container(
 			color: Colors.white,
-		  child: Column(
-		  	children: <Widget>[
-		  		!reverseSectionsOrder ? firstSection : secondSection,
-		  		reverseButton,
-		  		!reverseSectionsOrder ? secondSection : firstSection,
-		  	],
-		  ),
+			child: SingleChildScrollView(
+				child: orientedColumn,
+			),
 		);
 	}
 
